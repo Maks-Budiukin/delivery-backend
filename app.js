@@ -6,6 +6,7 @@ const app = express();
 
 const authRouter = require("./routes/api/auth");
 const ordersRouter = require("./routes/api/orders");
+const shopsRouter = require("./routes/api/shops");
 
 const formatsLogger = app.get("env") === "development" ? "dev" : "short";
 
@@ -15,6 +16,7 @@ app.use(express.json());
 
 app.use("/api/auth", authRouter);
 app.use("/api/orders", ordersRouter);
+app.use("/api/shops", shopsRouter);
 
 app.use((req, res) => {
   res.status(404).json({ message: "Not found" });

@@ -5,6 +5,8 @@ const { Product } = require("./Product");
 const { productJoiSchema } = require("./Product");
 const { Order } = require("./Order");
 const { orderJoiSchema } = require("./Order");
+const { Shop } = require("./Shop");
+const { shopJoiSchema } = require("./Shop");
 
 module.exports = {
   User,
@@ -14,4 +16,6 @@ module.exports = {
   productJoiSchema,
   Order,
   orderJoiSchema,
+  Shop,
+  shopJoiSchema,
 };
