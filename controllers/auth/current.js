@@ -6,12 +6,6 @@ const current = catchAsync(async (req, res, next) => {
   const { _id } = req.user;
   console.log(_id);
 
-  // const user = await User.findOneAndUpdate(_id).select(
-  //   "-password -updatedAt -createdAt"
-  // );
-
-  // const user = await User.findOne({ _id });
-
   const user = await User.findById(_id).select(
     "-password -updatedAt -createdAt"
   );

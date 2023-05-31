@@ -44,14 +44,6 @@ const add = catchAsync(async (req, res, next) => {
     client: existUser._id,
   });
 
-  //   await order.populate({
-  //     path: "cart",
-  //     populate: {
-  //       path: "product",
-  //       model: "product",
-  //     },
-  //   });
-
   res.status(201).json({
     data: order,
   });
