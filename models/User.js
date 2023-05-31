@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 const Joi = require("joi");
 
-const userShema = Schema(
+const userSchema = Schema(
   {
     name: {
       type: String,
@@ -14,7 +14,6 @@ const userShema = Schema(
     },
     password: {
       type: String,
-      required: [true, "Password is required"],
     },
     phone: {
       type: String,
@@ -37,7 +36,7 @@ const userShema = Schema(
   { versionKey: false, timestamps: true }
 );
 
-const User = model("user", userShema);
+const User = model("user", userSchema);
 
 const regJoiSchema = Joi.object({
   name: Joi.string().max(16).required(),

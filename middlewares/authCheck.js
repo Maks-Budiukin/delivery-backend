@@ -10,6 +10,10 @@ const { JWT_SECRET } = process.env;
 const authCheck = catchAsync(async (req, res, next) => {
   const { authorization } = req.headers;
 
+  if (!authorization) {
+    next(Unauthorized("Not authorized"));
+  }
+
   const [bearer, token] = authorization.split(" ");
 
   if (bearer !== "Bearer") {
