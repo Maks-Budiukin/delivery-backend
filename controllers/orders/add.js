@@ -45,7 +45,7 @@ const add = catchAsync(async (req, res, next) => {
   });
 
   res.status(201).json({
-    data: order,
+    order,
   });
 });
 

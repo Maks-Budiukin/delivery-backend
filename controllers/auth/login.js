@@ -44,7 +44,7 @@ const login = catchAsync(async (req, res, next) => {
   ).select("-password -registered -updatedAt -createdAt");
 
   res.json({
-    data: user,
+    user,
   });
 });
 

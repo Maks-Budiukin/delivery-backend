@@ -12,7 +12,7 @@ const getAll = catchAsync(async (req, res, next) => {
   });
 
   res.json({
-    data: orders,
+    orders,
   });
 });
 

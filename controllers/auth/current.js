@@ -17,7 +17,7 @@ const current = catchAsync(async (req, res, next) => {
   console.log(user);
 
   res.status(200).json({
-    data: user,
+    user,
   });
 });
 

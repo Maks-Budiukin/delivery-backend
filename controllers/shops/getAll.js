@@ -5,7 +5,7 @@ const getAll = catchAsync(async (req, res, next) => {
   const shops = await Shop.find();
 
   res.json({
-    data: shops,
+    shops,
   });
 });
 
