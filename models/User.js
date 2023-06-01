@@ -42,6 +42,7 @@ const regJoiSchema = Joi.object({
   email: Joi.string().required().email(),
   phone: Joi.string().required(),
   password: Joi.string().min(6).max(30).required(),
+  address: Joi.string(),
 });
 
 const loginJoiSchema = Joi.object({

@@ -4,7 +4,7 @@ const { User, regJoiSchema } = require("../../models");
 const { catchAsync } = require("../../services");
 
 const register = catchAsync(async (req, res, next) => {
-  const { email, password, name, phone } = req.body;
+  const { email, password, name, phone, address } = req.body;
 
   const { error } = regJoiSchema.validate(req.body);
   if (error) {
@@ -26,6 +26,7 @@ const register = catchAsync(async (req, res, next) => {
       email,
       name,
       phone,
+      address,
       registered: true,
     },
     {
