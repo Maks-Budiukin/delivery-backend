@@ -11,16 +11,14 @@ const add = catchAsync(async (req, res, next) => {
     let rawTotalPrice = 0;
 
     for (const item of cart) {
-      const product = await Product.findById(item.product);
-      rawTotalPrice += product.price * item.quantity;
-      console.log(rawTotalPrice, "INSIDE FOROF");
+      const product = await Product.findById(item.id);
+      rawTotalPrice += product.price * item.count;
     }
     totalPrice = parseFloat(rawTotalPrice.toFixed(2));
   };
   await getTotalPrice();
 
   if (totalPrice !== total) {
-    console.log(totalPrice, "INSIDE CHECK");
     return next(BadRequest("WRONG SUM"));
   }
 
@@ -29,7 +27,7 @@ const add = catchAsync(async (req, res, next) => {
     {
       email: user.email,
       name: user.name,
-      phone: user.phone,
+      phone: user.number,
       address: user.address,
     },
     {
