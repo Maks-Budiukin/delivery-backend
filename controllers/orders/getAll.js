@@ -6,7 +6,7 @@ const getAll = catchAsync(async (req, res, next) => {
   const orders = await Order.find({ client: id }).populate({
     path: "cart",
     populate: {
-      path: "product",
+      path: "id",
       model: "product",
     },
   });

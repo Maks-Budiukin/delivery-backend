@@ -2,11 +2,11 @@ const { Schema, model } = require("mongoose");
 const Joi = require("joi");
 
 const prodListSchema = Schema({
-  product: {
+  id: {
     type: Schema.Types.ObjectId,
     ref: "product",
   },
-  quantity: {
+  count: {
     type: Number,
   },
 });

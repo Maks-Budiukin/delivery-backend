@@ -11,8 +11,8 @@ const add = catchAsync(async (req, res, next) => {
     let rawTotalPrice = 0;
 
     for (const item of cart) {
-      const product = await Product.findById(item.product);
-      rawTotalPrice += product.price * item.quantity;
+      const product = await Product.findById(item.id);
+      rawTotalPrice += product.price * item.count;
     }
     totalPrice = parseFloat(rawTotalPrice.toFixed(2));
   };
