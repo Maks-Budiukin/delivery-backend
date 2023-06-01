@@ -14,10 +14,10 @@ const userSchema = Schema(
     },
     password: {
       type: String,
+      required: [true, "Password is required"],
     },
     phone: {
       type: String,
-      required: [true, "Password is required"],
     },
     address: {
       type: String,
